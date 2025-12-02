@@ -1,0 +1,11 @@
+\section{Methodology and Mathematical Formulation}
+
+This section demonstrates how to format mathematical models.
+
+
+\subsection{Distance Metrics for Mixed Data}
+To handle both numerical and categorical data, we utilize a combined dissimilarity measure \citep{lee2024clustering}:
+$$
+d(X_i, Q_l) = \underbrace{\sum_{s=1}^{p}(x_{is} - q_{ls})^2}_{\text{Numerical}} + \gamma \underbrace{\sum_{r=1}^{q}\delta(x_{ir}, q_{lr})}_{\text{Categorical}}
+$$
+Here, $\gamma$ is a hyperparameter that balances the contribution of the two attribute types.

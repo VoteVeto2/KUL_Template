@@ -1,0 +1,138 @@
+\documentclass[11pt, a4paper]{article}
+
+% ==========================================
+% Preamble and Packages
+% ==========================================
+
+% --- PREAMBLE & PACKAGES ---
+\usepackage[a4paper, margin=2.5cm]{geometry}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+% 1. TYPOGRAPHY: Palatino for body, Helvetica for headers
+\usepackage{mathpazo} 
+\usepackage[scaled=0.95]{helvet}
+
+% 2. MATH PACKAGES
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% 3. COLORS: KU Leuven Blue definition
+\usepackage{xcolor}
+\definecolor{kuleuvenblue}{RGB}{29,141,176}
+
+% 4. GRAPHICS & TABLES
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{tablefootnote}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning}
+
+% 5. STANDALONE SUPPORT
+% This package allows titlepage.tex to compile on its own AND be included here.
+\usepackage{standalone}
+
+% 6. HEADERS & FOOTERS
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{} % Clear all header/footer fields
+\fancyhead[L]{\sffamily\small\color{gray}Research Proposal}
+\fancyhead[R]{\sffamily\small\thepage}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{kuleuvenblue}\leaders\hrule height \headrulewidth\hfill}}
+
+% 7. SECTION STYLING (KU Leuven Style)
+\usepackage{titlesec}
+\titleformat{\section}
+  {\color{kuleuvenblue}\normalfont\Large\bfseries\sffamily}
+  {\thesection}{1em}{}
+\titleformat{\subsection}
+  {\color{black}\normalfont\large\bfseries\sffamily}
+  {\thesubsection}{1em}{}
+
+% 8. HYPERLINKS
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=kuleuvenblue,
+    filecolor=kuleuvenblue,      
+    urlcolor=kuleuvenblue,
+    citecolor=kuleuvenblue,
+}
+
+% 9. BIBLIOGRAPHY
+\usepackage[backend=biber, style=authoryear, natbib=true]{biblatex}
+\addbibresource{references.bib}
+
+% FORCE \cite TO BEHAVE LIKE \citep (Your "Pic 1" Request)
+\let\cite\citep
+
+% MAKE author and year blue, keep brackets and comma black
+\DeclareFieldFormat{citehyperref}{%
+  \textcolor{kuleuvenblue}{\bibhyperref{#1}}}
+
+% CITE: Author, Year - brackets in black, author and year in blue
+\DeclareCiteCommand{\cite}[\mkbibparens]
+  {\usebibmacro{prenote}}
+  {\usebibmacro{citeindex}%
+  \printtext[citehyperref]{\printnames{labelname}}%
+  \setunit{\addcomma\space}%
+  \printtext[citehyperref]{\printfield{year}}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+
+% CITEP: (Author, Year) - brackets and comma in black, author and year in blue
+\DeclareCiteCommand{\citep}[\mkbibparens]
+  {\usebibmacro{prenote}}
+  {\usebibmacro{citeindex}%
+  \printtext[citehyperref]{\printnames{labelname}}%
+  \setunit{\addcomma\space}%
+  \printtext[citehyperref]{\printfield{year}}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+
+% CITET: Author (Year) - brackets in black, author and year in blue
+\DeclareCiteCommand{\citet}
+  {\usebibmacro{prenote}}
+  {\usebibmacro{citeindex}%
+  \printtext[citehyperref]{\printnames{labelname}}%
+  \mkbibparens{\printtext[citehyperref]{\printfield{year}}}}
+  {\multicitedelim}
+       {\usebibmacro{postnote}}
+
+% 10. GANTT CHARTS
+\usepackage{pgfgantt}
+
+% ==========================================
+% DOCUMENT CONTENT
+% ==========================================
+\begin{document}
+
+% --- TITLE PAGE ---
+
+\input{titlepage}
+
+% --- MAIN SECTIONS ---
+
+\input{Chapter/Ch1}
+
+\input{Chapter/Ch2}
+
+\input{Chapter/Ch3}
+
+\input{Chapter/Ch4}
+
+% --- Bibliography --
+\newpage 
+\printbibliography
+
+
+% --- Appendix --- 
+\newpage
+\appendix
+\input{appendix}
+
+
+\end{document}

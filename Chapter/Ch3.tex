@@ -1,0 +1,50 @@
+\section{Data and Visualization}
+
+\subsection{Preprocessing Pipeline}
+Figures can be inserted using the \texttt{graphicx} package.
+
+\begin{figure}[H]
+  \centering
+  % "example-image-a" is built into LaTeX. Replace with "image/filename.jpg"
+  \includegraphics[width=0.95\textwidth]{image/pipeline.jpg} 
+  \caption{Some random pipeline}
+  \label{fig:pipeline}
+\end{figure}
+
+\subsection{Descriptive Statistics}
+Below is an example of two tables positioned side-by-side using \texttt{minipage}.
+
+\begin{table}[H]
+\centering
+\begin{minipage}[t]{0.48\textwidth}
+    \centering
+    \caption{Dataset Overview}
+    \label{tab:stats}
+    \begin{tabular}{lr}
+    \toprule
+    \textbf{Metric} & \textbf{Count/Value} \\
+    \midrule
+    Total Records & 46,908,485 \\
+    Unique Users & 1,156,906 \\
+    Date Start & 2024-10-01 \\
+    Date End & 2025-09-30 \\
+    Avg. Age & 67.1 \\
+    Completion Rate & 87.4\% \\
+    \bottomrule
+    \end{tabular}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+    \centering
+    \caption{Feature Descriptions}
+    \label{tab:features}
+    \begin{tabular}{|l|p{0.55\linewidth}|}
+    \hline
+    \textbf{Category}  &  \textbf{Description} \\ \hline
+    \textbf{Temporal}  &  Seasonality and peak hours. \\ \hline
+    \textbf{Demographic}  &  Age, gender, and risk factors. \\ \hline
+    \textbf{Spatial}  &  Regional distribution codes. \\ \hline
+    \textbf{Financial}  &  Reimbursement status. \\ \hline 
+    \end{tabular}
+\end{minipage}
+\end{table}

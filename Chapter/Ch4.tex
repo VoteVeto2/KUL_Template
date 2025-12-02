@@ -1,0 +1,16 @@
+\section{Results and Validation}
+We utilize standard metrics to validate the clustering output:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{p{2.5cm} p{5cm} p{4cm}}
+\toprule
+\textbf{Metric} & \textbf{Description} & \textbf{Threshold} \\
+\midrule
+Silhouette Score & Measures cohesion and separation $[-1,1]$. & $>0.5$ implies solid structure. \\
+\addlinespace
+Jaccard Index & Measures similarity between sets. & $>0.75$ implies stability. \\
+\bottomrule
+\end{tabular}
+\caption{Validation Metrics}
+\end{table}

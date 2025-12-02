@@ -1,0 +1,52 @@
+\begin{titlepage}
+    \thispagestyle{empty}
+    
+    % Side bar accent (KU Leuven Style)
+    \begin{tikzpicture}[remember picture, overlay]
+        \fill[kuleuvenblue] (current page.north west) rectangle ++(1.5cm,-\paperheight);
+    \end{tikzpicture}
+    
+    \vspace*{0.5cm}
+    \hspace{1cm} % Offset for the blue bar
+    \begin{minipage}{0.85\textwidth}
+        % Header with Logo and University Info
+        \begin{minipage}[c]{0.25\textwidth}
+             % Restored the actual logo include since we are back to multiple files
+             \includegraphics[height=3.4cm]{logo.pdf}
+        \end{minipage}
+        \hfill
+        \begin{minipage}[c]{0.7\textwidth}
+             \raggedleft
+             {\Large\sffamily Katholieke Universiteit Leuven}\\[0.5em]
+             {\Large\sffamily Faculty of Science}\\[0.5em]
+             {\textbf{\sffamily Master of Statistics and Data Science}}
+        \end{minipage}
+        
+        \vspace{1cm}
+        \hrule height 1pt \vspace{0.1cm} \hrule height 0.5pt
+        
+        \vspace{4cm}
+        
+        \begin{center}
+            \Huge\bfseries\sffamily\color{kuleuvenblue}
+            TBD:\\[0.5em] 
+            TBD
+        \end{center}
+        
+        \vfill
+        
+        \begin{flushright}
+            \Large\sffamily
+
+            \textbf{Somebody:}\\
+            Someone\\[0.5em]
+            
+            \textbf{Somebody used to know:}\\
+            Ex1\\
+            Ex2\\[1.5cm]
+            
+            \textbf{You (rnumber)}\\
+            Course Info
+        \end{flushright}
+    \end{minipage}
+\end{titlepage}
