@@ -37,11 +37,10 @@ pdflatex main.tex
 
 To work remotely and collaborate with your team:
 
-1. Go to [Overleaf](https://www.overleaf.com) and create a new blank project
-2. Upload all files from this repository (keep the folder structure)
-3. Set `main.tex` as the main document (Menu → Main document)
-4. Change compiler to `pdfLaTeX` and bibliography tool to `Biber` (Menu → Settings)
-5. Click the **Share** button to invite collaborators via email or link
+1. Download this file as a ZIP  
+2. Go to [Overleaf](https://www.overleaf.com)  upload contents to your Overleaf project
+3. Change compiler to `LuaLaTeX` (Menu → Settings → Compiler)
+4. Click the **Share** button to invite collaborators via email or link
 
 ## Features
 
